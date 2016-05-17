@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"SaveAllTheTime\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"RemikZiemlinski\",
+    \"Copyright\" : \"(C) Remik Ziemlinski\",
+    \"License\" : \"Public Domain\",
+    \"Description\" : \"Saves all modified documents continuously (every second).\",
+    \"Url\" : \"https://github.com/rsmz/SaveAllTheTime\",
+    $$dependencyList
+}

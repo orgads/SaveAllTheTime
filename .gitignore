@@ -1,0 +1,10 @@
+*.pyo
+*.pyc
+*.o
+*.so
+*.obj
+build
+*~
+tmp*
+*tmp
+

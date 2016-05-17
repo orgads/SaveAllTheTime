@@ -1,0 +1,9 @@
+#pragma once
+
+#include <QtGlobal>
+
+#if defined(SAVEALLTHETIME_LIBRARY)
+#  define SAVEALLTHETIMESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define SAVEALLTHETIMESHARED_EXPORT Q_DECL_IMPORT
+#endif

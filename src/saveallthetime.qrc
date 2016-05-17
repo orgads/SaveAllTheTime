@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/saveallthetime">
+        <file>images/category_saveallthetime.png</file>
+    </qresource>
+</RCC>
