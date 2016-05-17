@@ -8,39 +8,37 @@
 
 #include <QSharedPointer>
 
+QT_BEGIN_NAMESPACE
 class QAction;
 class QTimer;
+QT_END_NAMESPACE
 
 namespace SaveAllTheTime {
-  namespace Internal {
+namespace Internal {
 
-    class SaveAllTheTimePlugin : public ExtensionSystem::IPlugin
-    {
-      Q_OBJECT
-      Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QtCreatorPlugin" FILE "SaveAllTheTime.json")
+class SaveAllTheTimePlugin : public ExtensionSystem::IPlugin
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QtCreatorPlugin" FILE "SaveAllTheTime.json")
 
-    public:
-      SaveAllTheTimePlugin();
-      ~SaveAllTheTimePlugin();
+public:
+    SaveAllTheTimePlugin();
 
-      bool initialize(const QStringList &arguments, QString *errorString);
-      void extensionsInitialized();
-      ShutdownFlag aboutToShutdown();
+    bool initialize(const QStringList &arguments, QString *errorString);
+    void extensionsInitialized();
 
+private:
+    void refreshTimer();
+    void triggerAction();
 
-    private slots:
-      void refreshTimer();
-      void saveAll();
-      void triggerAction();
+private:
+    int getInterval();
 
-    private:
-      int getInterval();
+    QAction *m_action = nullptr;
+    QTimer *m_timer = nullptr;
+    const QSharedPointer<Settings> m_settings;
+    int m_seconds = 0;
+};
 
-      QAction* m_action;
-      int      m_seconds;
-      const QSharedPointer<Settings> m_settings;
-      QTimer*  m_timer;
-    };
-
-  } // namespace Internal
+} // namespace Internal
 } // namespace SaveAllTheTime

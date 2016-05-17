@@ -38,7 +38,7 @@ public:
 
     QWidget *widget() override;
     void apply() override;
-    void finish() override { }
+    void finish() override {}
 
 signals:
     void applied();
