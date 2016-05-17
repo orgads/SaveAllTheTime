@@ -4,7 +4,8 @@
 *.so
 *.obj
 build
+/build-*
 *~
 tmp*
 *tmp
-
+*.pro.user*
